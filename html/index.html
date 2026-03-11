@@ -6,6 +6,7 @@
     <title>THROWING OUT CONSCIENTE</title>
     <link rel="icon" type="image/png" href="/img/logo.png">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
 </head>
 <body>
     <header>
@@ -15,17 +16,70 @@
         </div>
         <nav>
             <div class="headerButton">
-                <button style="width: 25vh;">Locais de Descarte</button>
+                <button style="width: auto;">Locais de Descarte</button>
                 <button>Sobre</button>
                 <button>Denúncia</button>
                 <button>Coleta</button>
             </div>
-            <div class="headerUser">
+            <div class="cadastroLogin">
                 <button>Login</button>
-                <button>Cadastro</button>
+                <button class="cadastro">Cadastro</button>
             </div>
         </nav>
     </header>
-    
+    <section class="welcome">
+        <H1>Descarte de uma maneira eficiente e segura</H1>
+        <p>Uma cidade para melhor convivência começa com informação!</p>
+            <div class="cadastroLogin">
+                <button>Login</button>
+                <button class="cadastro">Cadastro</button>
+            </div>
+    </section>
+    <section class="dicaSection">
+        <h1>DICA DO DIA</h1>
+        <p>
+            ♻️ Nunca descarte pilhas e baterias no lixo comum. 
+            <br>Esses materiais contêm substâncias químicas que podem contaminar o solo e a água. 
+            <br>Procure pontos de coleta específicos em supermercados, lojas de eletrônicos ou centros de reciclagem da sua cidade.
+        </p>
+    </section>
+    <section class="descarteSection">
+        <div class="selectTipo">
+        <h1>PESQUISAR LOCAIS DE DESCARTE</h1>
+        <select>
+            <option value="">Escolha um material</option>
+            <option value="pilha">Pilha / bateria</option>
+            <option value="eletronico">Eletrônicos</option>
+            <option value="movel">Móveis</option>
+            <option value="vidro">Vidro</option>
+        </select>
+        </div>
+        <div id="map" style="height:500px; width:80%;" ></div>
+
+    </section>
+
+    <footer>
+        <div>
+            <img src="/img/logo.png">
+            <p>Throwing Out Consciente © 2026</p>
+        </div>
+    </footer>
+
 </body>
+<script>
+
+function initMap(){
+
+var map = new google.maps.Map(document.getElementById("map"),{
+
+zoom:12,
+center:{lat:-26.3044,lng:-48.8487}
+
+})
+
+}
+
+initMap()
+
+</script>
 </html>
