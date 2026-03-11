@@ -66,7 +66,8 @@ footer{
     justify-content: left;
     padding:20px;
     background:white;
-
+    color:#4caf50;
+    font-weight:bold;
 }
 
 .welcome{
@@ -143,6 +144,7 @@ footer{
     border-bottom: 2vh solid rgb(243, 241, 241);
 }
 .selectTipo{
+    padding-left: 15vh;
     display: flex;
     flex-direction: column;
     border:none;
@@ -152,4 +154,70 @@ footer{
     justify-items: center;
     align-content: center;
     padding-bottom: 2vh;
+}
+.selectTipo select{
+    width: 20%;
+    height: 5vh;
+    text-align: center;
+}
+.denunciaRequisicao{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#2E7D32,#4CAF50 );
+    border:none;
+    height: 110vh;
+    width: 100%;
+    color:white;
+    justify-content: left;
+    align-items: left;
+    padding-left: 15vh;
+    border-bottom: 2vh solid rgb(243, 241, 241);
+}
+.denunciaRequisicao h1{
+    font-size: 9vh;
+}
+.denunciaRequisicao p{
+    font-size: 2.4vh;
+}
+.denunciaRequisicao button{
+    background-color:rgb(59, 63, 59);
+    border: none;
+    border-radius: 7px;
+    height: 5vh;
+    width: 15vh;
+    cursor:pointer;
+    color:white;
+    font-weight: bold;
+}
+.denunciaRequisicao button:hover{
+   background-color:rgb(31, 31, 31); 
+}
+.about{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border:none;
+    height: 110vh;
+    width: 100%;
+    color:#4caf50;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    border-bottom: 2vh solid rgb(243, 241, 241);
+    overflow-wrap: break-word;
+
+}
+.imgFamily{
+    background-image: url(/img/family1.png);
+    width: 70vh; 
+    height: 60vh;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+.aboutText{
+    width: 40%;
+    gap:10vh;
 }

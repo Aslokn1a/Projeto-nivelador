@@ -48,16 +48,56 @@
         <h1>PESQUISAR LOCAIS DE DESCARTE</h1>
         <select>
             <option value="">Escolha um material</option>
-            <option value="pilha">Pilha / bateria</option>
+            <option value="pilha">Sofá</option>
+            <option value="pilha">Guarda-Roupa</option>
+            <option value="pilha">Eletrodomésticos</option>
             <option value="eletronico">Eletrônicos</option>
-            <option value="movel">Móveis</option>
+            <option value="movel">Mesa</option>
+            <option value="movel">Cama</option>
             <option value="vidro">Vidro</option>
         </select>
         </div>
-        <div id="map" style="height:500px; width:80%;" ></div>
+        <div id="map" style="height:500px"></div>
 
     </section>
-
+    <section class="denunciaRequisicao">
+        <H1>Alguem descartou de forma indevida?</H1>
+        <p>
+            Caso você tenha encontrado alguma instancia de lixo ou  resíduo que necessite de  tratamento<br>
+            especial mas não foi descartado de qualquer jeito, nos ajude acessando a página de reporte abaixo.
+        </p>
+            <div class>
+                <button>Denuncie</button>
+            </div>
+        <H1>Precisa que seja realizada a coleta de algum resíduo grande?</H1>
+        <p>
+            Todos temos alguma coisa de grande porte que desejamos nos livrar, como uma cama velha, um <br>
+            guarda rooupa que se encontra em péssimo estado, entre vários, realize a solicitação de remoção<br>
+            deles na página abaixo
+        </p>
+            <div class>
+                <button>Requisição</button>
+            </div>
+    </section>
+    <section class="about">
+        <div class="imgFamily"></div>
+        <div class="aboutText">
+            <div>
+                <h2>
+                    Sobre nós
+                </h2>
+                <p>
+                    Nossa missão é garantir para todos os cidadãos de Joinville 
+                    o acesso claro e consiso a informações de como realizar o descarte 
+                    de residuos de grande porte ou altamente delicados.
+                </p>
+                <p>
+                    Garantimos um local de acesso a informações e atendimento centralizado 
+                    para atender às necessidades de todos.
+                </p>
+            </div>
+        </div>
+    </section>
     <footer>
         <div>
             <img src="/img/logo.png">
@@ -70,15 +110,11 @@
 
 function initMap(){
 
-var map = new google.maps.Map(document.getElementById("map"),{
-
-zoom:12,
-center:{lat:-26.3044,lng:-48.8487}
-
-})
-
+    var map = new google.maps.Map(document.getElementById("map"),{
+    zoom:12,
+    center:{lat:-26.3044,lng:-48.8487}
+    })
 }
-
 initMap()
 
 </script>
