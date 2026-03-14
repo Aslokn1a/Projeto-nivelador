@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleta</title>
+    <link rel="icon" type="image/png" href="/img/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div onclick="direcionar('/html/index.html')" class="headerTitulo">
+            <img src="/img/logo.png" class="logo">
+            <h1>Throwing Out Eficiente</h1>
+        </div>
+        <nav>
+            <div class="headerButton">
+                <button style="width: auto;">Locais de Descarte</button>
+                <button>Sobre</button>
+                <button onclick="direcionar('/html/denuncia.html')">Denúncia</button>
+                <button onclick="direcionar('/html/coleta.html')">Coleta</button>
+            </div>
+            <div class="cadastroLogin">
+                <button onclick="direcionar('/html/login.html')">Login</button>
+                <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
+            </div>
+        </nav>
+    </header>
+    <section class="welcome">
+        <div class="retornar">
+            <button onclick="direcionar('/html/index.html')">Retornar</button>
+        </div>
+        <div class="container">
+            <h1>Faça sua Requisição de coleta abaixo</h1>
+            <form>
+                <input type="number" id="email" placeholder="Informe o ID do local"required>
+                <select name="tipoMaterial" id="tipoMaterial">
+                    <option value="Sofa">Sofa</option>
+                    <option value="Guarda Roupa">Guarda Roupa</option>
+                    <option value="Geladeira">Geladeira</option>
+                    <option value="Comoda">Comoda</option>
+                    <option value="mesa">mesa</option>
+                    <option value="cama">cama</option>
+                    <option value="bateria">bateria</option>
+                    <option value="pilha">pilha</option>
+                    <option value="eletronicos">eletronicos</option>
+                    <option value="Vidro">Vidro</option>
+                </select>
+                <input style="padding-bottom:10vh; width:100%" type="text" id="senha" placeholder="observação"required>
+                <button type="submit" class="formButton">Registrar</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <img src="/img/logo.png">
+            <p>Throwing Out Consciente © 2026</p>
+        </div>
+    </footer>
+
+</body>
+<script src="/js/script.js"></script>
+</html>

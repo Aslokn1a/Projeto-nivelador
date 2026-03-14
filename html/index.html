@@ -17,12 +17,12 @@
         </div>
         <nav>
             <div class="headerButton">
-                <button style="width: auto;">Locais de Descarte</button>
-                <button>Sobre</button>
-                <button>Denúncia</button>
-                <button>Coleta</button>
+                <button onclick="scrollSecao('local')" style="width: auto;">Locais de Descarte</button>
+                <button onclick="scrollSecao('sobre')">Sobre</button>
+                <button onclick="direcionar('/html/denuncia.html')">Denúncia</button>
+                <button onclick="direcionar('/html/coleta.html')">Coleta</button>
             </div>
-            <div class="cadastroLogin">
+            <div class="cadastroLogin" id="userArea">
                 <button onclick="direcionar('/html/login.html')">Login</button>
                 <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
@@ -44,7 +44,7 @@
             <br>Procure pontos de coleta específicos em supermercados, lojas de eletrônicos ou centros de reciclagem da sua cidade.
         </p>
     </section>
-    <section class="descarteSection">
+    <section class="descarteSection" id="local">
         <div class="selectTipo">
         <h1>PESQUISAR LOCAIS DE DESCARTE</h1>
         <select>
@@ -80,7 +80,7 @@
                 <button>Requisição</button>
             </div>
     </section>
-    <section class="about">
+    <section class="about" id="sobre">
         <div class="imgFamily"></div>
         <div class="aboutText">
             <div>

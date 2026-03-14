@@ -17,22 +17,22 @@
             <div class="headerButton">
                 <button style="width: auto;">Locais de Descarte</button>
                 <button>Sobre</button>
-                <button>Denúncia</button>
-                <button>Coleta</button>
+                <button onclick="direcionar('/html/denuncia.html')">Denúncia</button>
+                <button onclick="direcionar('/html/coleta.html')">Coleta</button>
             </div>
             <div class="cadastroLogin">
-                <button>Login</button>
-                <button class="cadastro">Cadastro</button>
+                <button onclick="direcionar('/html/login.html')">Login</button>
+                <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
         </nav>
     </header>
     <section class="welcome">
         <div class="retornar">
-            <button>Retornar</button>
+            <button onclick="direcionar('/html/index.html')">Retornar</button>
         </div>
         <div class="container">
             <h1>Realize o Login</h1>
-            <form>
+            <form id="loginForm">
                 <input type="text" id="email" placeholder="Informe seu endereço de email"required>
                 <input type="text" id="senha" placeholder="Informe sua senha"required>
                 <button type="submit" class="formButton">Logar</button>
@@ -45,4 +45,29 @@
             <p>Throwing Out Consciente © 2026</p>
         </div>
     </footer>
+
 </body>
+<script src="/js/script.js"></script>
+<script>
+    document.getElementById("loginForm").addEventListener("submit",async(l)=>{
+        l.preventDefault()
+        let email=document.getElementById("email").value
+        let senha=document.getElementById("senha").value
+        let res=await fetch("http://localhost:3000/usuario/login",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            credentials:"include",
+            body:JSON.stringify({email,senha})
+
+        })
+        let data=await res.json()
+        if(data.login){
+            location.href="index.html"
+        }else{
+            window.alert("login inválido")
+        }
+    })
+</script>
+</html>

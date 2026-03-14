@@ -17,31 +17,27 @@
             <div class="headerButton">
                 <button style="width: auto;">Locais de Descarte</button>
                 <button>Sobre</button>
-                <button>Denúncia</button>
-                <button>Coleta</button>
+                <button onclick="direcionar('/html/denuncia.html')">Denúncia</button>
+                <button onclick="direcionar('/html/coleta.html')">Coleta</button>
             </div>
             <div class="cadastroLogin">
-                <button>Login</button>
-                <button class="cadastro">Cadastro</button>
+                <button onclick="direcionar('/html/login.html')">Login</button>
+                <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
         </nav>
     </header>
     <section class="welcome">
         <div class="retornar">
-            <button>Retornar</button>
+            <button onclick="direcionar('/html/index.html')">Retornar</button>
         </div>
         <div class="container">
             <h1>Realize o Cadastro</h1>
-            <form class="form">
+            <form class="form" id="cadastroForm">
 
                 <input type="text" id="nome" placeholder="Informe seu nome"required>
-
                 <input type="text" id="email" placeholder="Informe seu endereço de email"required>
-
                 <input type="text" id="senha" placeholder="Informe sua senha"required>
-
                 <input type="text" id="confSenha" placeholder="Confirme sua senha"required>
-                
                 <button type="submit" class="formButton">Finalizar Cadastro</button>
             </form>
         </div>
@@ -53,3 +49,23 @@
         </div>
     </footer>
 </body>
+<script src="/js/script.js"></script>
+<script>
+    
+    document.getElementById("cadastroForm").addEventListener("submit",async(c)=>{
+            c.preventDefault
+            let nome=document.getElementById("nome").value
+            let email=document.getElementById("email").value
+            let senha=document.getElementById("senha").value
+            let res=await fetch("http://localhost:3000/usuario/cadastro",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({nome,email,senha})
+                
+            })
+            
+    })
+</script>
+</html>
