@@ -7,10 +7,11 @@
     <link rel="icon" type="image/png" href="/img/logo.png">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+    
 </head>
 <body>
     <header>
-        <div class="headerTitulo">
+        <div onclick="direcionar('/html/index.html')" class="headerTitulo">
             <img src="/img/logo.png" class="logo">
             <h1>Throwing Out Eficiente</h1>
         </div>
@@ -22,8 +23,8 @@
                 <button>Coleta</button>
             </div>
             <div class="cadastroLogin">
-                <button>Login</button>
-                <button class="cadastro">Cadastro</button>
+                <button onclick="direcionar('/html/login.html')">Login</button>
+                <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
         </nav>
     </header>
@@ -31,8 +32,8 @@
         <H1>Descarte de uma maneira eficiente e segura</H1>
         <p>Uma cidade para melhor convivência começa com informação!</p>
             <div class="cadastroLogin">
-                <button>Login</button>
-                <button class="cadastro">Cadastro</button>
+                <button onclick="direcionar('/html/login.html')">Login</button>
+                <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
     </section>
     <section class="dicaSection">
@@ -106,6 +107,7 @@
     </footer>
 
 </body>
+<script src="/js/script.js"></script>
 <script>
 
 function initMap(){

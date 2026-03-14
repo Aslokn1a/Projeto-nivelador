@@ -1,0 +1,7 @@
+Execute esse comando dentro da pasta server para 
+iniciar o banco de dados no node.js:
+
+node server.js
+
+
+-------------------------------------------
