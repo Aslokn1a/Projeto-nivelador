@@ -20,7 +20,7 @@
                 <button onclick="direcionar('/html/denuncia.html')">Denúncia</button>
                 <button onclick="direcionar('/html/coleta.html')">Coleta</button>
             </div>
-            <div class="cadastroLogin">
+            <div class="cadastroLogin" id="userArea">
                 <button onclick="direcionar('/html/login.html')">Login</button>
                 <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
@@ -32,19 +32,19 @@
         </div>
         <div class="container">
             <h1>Faça sua Requisição de coleta abaixo</h1>
-            <form>
-                <input type="number" id="email" placeholder="Informe o ID do local"required>
+            <form id="coletaForm">
+                <input type="number" id="local" placeholder="Informe o ID do local"required>
                 <select name="tipoMaterial" id="tipoMaterial">
-                    <option value="Sofa">Sofa</option>
-                    <option value="Guarda Roupa">Guarda Roupa</option>
-                    <option value="Geladeira">Geladeira</option>
-                    <option value="Comoda">Comoda</option>
-                    <option value="mesa">mesa</option>
-                    <option value="cama">cama</option>
-                    <option value="bateria">bateria</option>
-                    <option value="pilha">pilha</option>
-                    <option value="eletronicos">eletronicos</option>
-                    <option value="Vidro">Vidro</option>
+                    <option value="2">Sofa</option>
+                    <option value="3">Guarda Roupa</option>
+                    <option value="4">Geladeira</option>
+                    <option value="5">Comoda</option>
+                    <option value="6">mesa</option>
+                    <option value="7">cama</option>
+                    <option value="8">bateria</option>
+                    <option value="9">pilha</option>
+                    <option value="10">eletronicos</option>
+                    <option value="11">Vidro</option>
                 </select>
                 <input style="padding-bottom:10vh; width:100%" type="text" id="senha" placeholder="observação"required>
                 <button type="submit" class="formButton">Registrar</button>
@@ -60,4 +60,31 @@
 
 </body>
 <script src="/js/script.js"></script>
+<script>
+    document.getElementById("coletaForm").addEventListener("submit",async(co)=>{
+        co.preventDefault()
+        let local = document.getElementById("local").value
+        let tipoMaterial = document.getElementById("tipoMaterial").value
+        let res = await fetch("http://localhost:3000/coleta/inserir",{
+            method:"POST",
+            credentials:"include",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                local,tipoMaterial
+            })
+        })
+        let data=await res.json()
+        if(data.sucesso){
+            alert("Requisicao de coleta enviada!")
+            document.getElementById("coletaForm").reset()
+        }
+        
+    })
+
+
+
+    nescessitaLogin()
+</script>
 </html>

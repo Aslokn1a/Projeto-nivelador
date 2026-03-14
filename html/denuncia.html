@@ -20,7 +20,7 @@
                 <button onclick="direcionar('/html/denuncia.html')">Denúncia</button>
                 <button onclick="direcionar('/html/coleta.html')">Coleta</button>
             </div>
-            <div class="cadastroLogin">
+            <div class="cadastroLogin" id="userArea">
                 <button onclick="direcionar('/html/login.html')">Login</button>
                 <button onclick="direcionar('/html/cadastro.html')" class="cadastro">Cadastro</button>
             </div>
@@ -32,14 +32,14 @@
         </div>
         <div class="container">
             <h1>Realize sua Denúncia abaixo</h1>
-            <form>
-                <input type="number" id="email" placeholder="Informe o ID do local"required>
+            <form enctype="multipart/form-data" id="formDenuncia">
+                <input type="number" id="local" placeholder="Informe o ID do local"required>
                 <label for="imagem">
                     <img src="/img/add.png">
                     Coloque sua imagem aqui
                 </label>
                 <input type="file" id="imagem" accept="image/*">
-                <input style="padding-bottom:10vh; width:100%" type="text" id="senha" placeholder="observação"required>
+                <input style="padding-bottom:10vh; width:100%" type="text" id="observacao" placeholder="observação"required>
                 <button type="submit" class="formButton">Denunciar</button>
             </form>
         </div>
@@ -53,4 +53,25 @@
 
 </body>
 <script src="/js/script.js"></script>
+<script>
+    document.getElementById("formDenuncia").addEventListener("submit",async(d)=>{
+        d.preventDefault()
+        
+        let formData = new FormData()
+        formData.append("local",document.getElementById("local").value)
+        formData.append("observacao",document.getElementById("observacao").value)
+        formData.append("imagem",document.getElementById("imagem").files[0])
+        let res = await fetch("http://localhost:3000/denuncia",{
+            method:"POST",
+            credentials:"include",
+            body:formData
+        })
+        let data = await res.json()
+        if(data.sucesso){
+            alert("Denuncia enviada!")
+            document.getElementById("formDenuncia").reset()
+        }
+    })
+    nescessitaLogin()
+</script>
 </html>
